@@ -6,11 +6,13 @@
 const express = require("express");
 const { MongoClient, ServerApiVersion } = require('mongodb');
 const bodyParser = require("body-parser");
+require('dotenv').config();
+const uri = process.env.MONGODB_URI;
+
 const cors = require("cors");
 
 const app = express();
 
-const uri= "mongodb+srv://jitinchekka2:tsdG1S4YqB2tbQEq@cluster0.cdnvlxs.mongodb.net/?retryWrites=true&w=majority";
 // Configure middleware
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
